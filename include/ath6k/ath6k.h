@@ -2,8 +2,8 @@
 //
 // Copyright (c) 2026 Antonio Niño Díaz
 
-#ifndef LIBATH6H_ATH6K_H__
-#define LIBATH6H_ATH6K_H__
+#ifndef LIBATH6K_ATH6K_H__
+#define LIBATH6K_ATH6K_H__
 
 #ifdef __cplusplus
 extern "C" {
@@ -24,4 +24,4 @@ extern "C" {
 }
 #endif
 
-#endif // LIBATH6H_ATH6K_H__
+#endif // LIBATH6K_ATH6K_H__
