@@ -22,13 +22,13 @@ endif
 # Targets
 # -------
 
-.PHONY: all clean docs install ath6k
+.PHONY: all clean docs install xtensa
 
-all: ath6k
+all: xtensa
 
-ath6k:
-	@+$(MAKE) -f Makefile.ath6k --no-print-directory
-	@+$(MAKE) -f Makefile.ath6k --no-print-directory DEBUG=1
+xtensa:
+	@+$(MAKE) -f Makefile.xtensa --no-print-directory
+	@+$(MAKE) -f Makefile.xtensa --no-print-directory DEBUG=1
 
 clean:
 	@echo "  CLEAN"
