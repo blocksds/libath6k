@@ -1,6 +1,12 @@
+// SPDX-License-Identifier: Zlib
+//
+// Copyright (c) 2026 Antonio Niño Díaz
+
 // TODO: Delete this file
 
-int xtensa_add(int a, int b)
+#include <ath6k/ath6k.h>
+
+int xtensa_multiply(int a, int b)
 {
     return a + b;
 }

@@ -19,6 +19,7 @@ extern "C" {
 /// Welcome to the libath6k reference documentation.
 
 #include <ath6k/types.h>
+#include <ath6k/placeholder.h>
 
 #ifdef __cplusplus
 }
