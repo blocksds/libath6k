@@ -9,7 +9,7 @@
 extern "C" {
 #endif
 
-#include <stdint.h>
+//#include <stdint.h>
 
 #define BIT(n) (1 << (n))
 
@@ -17,22 +17,22 @@ extern "C" {
 #define ALIGN(m) __attribute__((aligned(m)))
 
 /// 8 bit unsigned integer.
-typedef uint8_t u8;
+typedef unsigned char u8;
 /// 16 bit unsigned integer.
-typedef uint16_t u16;
+typedef unsigned short u16;
 /// 32 bit unsigned integer.
-typedef uint32_t u32;
+typedef unsigned int u32;
 /// 64 bit unsigned integer.
-typedef uint64_t u64;
+typedef unsigned long long u64;
 
 /// 8 bit signed integer.
-typedef int8_t s8;
+typedef signed char s8;
 /// 16 bit signed integer.
-typedef int16_t s16;
+typedef signed short s16;
 /// 32 bit signed integer.
-typedef int32_t s32;
+typedef signed int s32;
 /// 64 bit signed integer.
-typedef int64_t s64;
+typedef signed long long s64;
 
 /// 8 bit volatile unsigned integer.
 typedef volatile u8 vu8;
