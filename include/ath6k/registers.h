@@ -158,6 +158,122 @@ extern "C" {
 #define SI_RX_DATA0     (*(vu32)0x010010)
 #define SI_RX_DATA1     (*(vu32)0x010014)
 
+// GPIO Registers
+// --------------
+
+#define WLAN_GPIO_OUT           (*(vu32*)0x014000) // GPIO Output Data
+#define WLAN_GPIO_OUT_W1TS      (*(vu32*)0x014004) // (direct, and Write-1-To-Set/Clr)
+#define WLAN_GPIO_OUT_W1TC      (*(vu32*)0x014008)
+
+#define WLAN_GPIO_ENABLE        (*(vu32*)0x01400C) // GPIO Output Enable
+#define WLAN_GPIO_ENABLE_W1TS   (*(vu32*)0x014010) // (direct, and Write-1-To-Set/Clr)
+#define WLAN_GPIO_ENABLE_W1TC   (*(vu32*)0x014014)
+
+#define WLAN_GPIO_IN            (*(vu32*)0x014018) // GPIO Input
+
+#define WLAN_GPIO_STATUS        (*(vu32*)0x01401C) // GPIO Interrupt Status
+#define WLAN_GPIO_STATUS_W1TS   (*(vu32*)0x014020) // (direct, and Write-1-To-Set/Clr)
+#define WLAN_GPIO_STATUS_W1TC   (*(vu32*)0x014024)
+
+#define WLAN_GPIO_PIN0          (*(vu32*)0x014028) // GPIO0  Bluetooth coex BT_PRIORITY
+#define WLAN_GPIO_PIN1          (*(vu32*)0x01402C) // GPIO1  Bluetooth coex WLAN_ACTIVE
+#define WLAN_GPIO_PIN2          (*(vu32*)0x014030) // GPIO2  Bluetooth coex BT_FREQ    ;I2C SCL
+#define WLAN_GPIO_PIN3          (*(vu32*)0x014034) // GPIO3  Bluetooth coex BT_ACTIVE  ;I2C SDA
+#define WLAN_GPIO_PIN4          (*(vu32*)0x014038) // GPIO4  SDIO/GSPI interface select
+#define WLAN_GPIO_PIN5          (*(vu32*)0x01403C) // GPIO5  SDIO/GSPI interface select
+#define WLAN_GPIO_PIN6          (*(vu32*)0x014040) // GPIO6
+#define WLAN_GPIO_PIN7          (*(vu32*)0x014044) // GPIO7  TRST for JTAG debug
+#define WLAN_GPIO_PIN8          (*(vu32*)0x014048) // GPIO8  external 32kHz clock in
+#define WLAN_GPIO_PIN9          (*(vu32*)0x01404C) // GPIO9  I2C SCL  or SPI CLK
+#define WLAN_GPIO_PIN10         (*(vu32*)0x014050) // GPIO10 I2C SDA  or SPI MISO
+#define WLAN_GPIO_PIN11         (*(vu32*)0x014054) // GPIO11 UART RXD or SPI MOSI
+#define WLAN_GPIO_PIN12         (*(vu32*)0x014058) // GPIO12 UART TXD or SPI /CS
+#define WLAN_GPIO_PIN13         (*(vu32*)0x01405C) // GPIO13 Reset in for JTAG debug
+#define WLAN_GPIO_PIN14         (*(vu32*)0x014060) // GPIO14 UART CTS
+#define WLAN_GPIO_PIN15         (*(vu32*)0x014064) // GPIO15 UART RTS
+#define WLAN_GPIO_PIN16         (*(vu32*)0x014068) // GPIO16
+#define WLAN_GPIO_PIN17         (*(vu32*)0x01406C) // GPIO17
+#define SDIO_PIN                (*(vu32*)0x014070) // Config: Pad Pull/Strength
+#define CLK_REQ_PIN             (*(vu32*)0x014074) // Config: Pad Pull/Strength/AteOeLow
+
+#define WLAN_SIGMA_DELTA        (*(vu32*)0x014078)
+#define WLAN_DEBUG_CONTROL      (*(vu32*)0x01407C)
+#define WLAN_DEBUG_INPUT_SEL    (*(vu32*)0x014080)
+#define WLAN_DEBUG_OUT          (*(vu32*)0x014084)
+#define LA_CONTROL              (*(vu32*)0x014088)
+#define LA_CLOCK                (*(vu32*)0x01408C)
+#define LA_STATUS               (*(vu32*)0x014090)
+#define LA_TRIGGER_SAMPLE       (*(vu32*)0x014094)
+#define LA_TRIGGER_POSITION     (*(vu32*)0x014098)
+#define LA_PRE_TRIGGER          (*(vu32*)0x01409C)
+#define LA_POST_TRIGGER         (*(vu32*)0x0140A0)
+#define LA_FILTER_CONTROL       (*(vu32*)0x0140A4)
+#define LA_FILTER_DATA          (*(vu32*)0x0140A8)
+#define LA_FILTER_WILDCARD      (*(vu32*)0x0140AC)
+#define LA_TRIGGERA_DATA        (*(vu32*)0x0140B0)
+#define LA_TRIGGERA_WILDCARD    (*(vu32*)0x0140B4)
+#define LA_TRIGGERB_DATA        (*(vu32*)0x0140B8)
+#define LA_TRIGGERB_WILDCARD    (*(vu32*)0x0140BC)
+#define LA_TRIGGER              (*(vu32*)0x0140C0)
+#define LA_FIFO                 (*(vu32*)0x0140C4)
+#define LA_DATA                 ((vu32*)0x0140C8) // 0..1
+
+#define ANT_PIN                 (*(vu32*)0x0140D0) // Config: Pad Pull/Strength
+#define ANTD_PIN                (*(vu32*)0x0140D4) // Config: Pad Pull
+#define GPIO_PIN                (*(vu32*)0x0140D8) // Config: Pad Pull/Strength
+#define GPIO_H_PIN              (*(vu32*)0x0140DC) // Config: Pad Pull
+#define BT_PIN                  (*(vu32*)0x0140E0) // Config: Pad Pull/Strength
+#define BT_WLAN_PIN             (*(vu32*)0x0140E4) // Config: Pad Pull
+#define SI_UART_PIN             (*(vu32*)0x0140E8) // Config: Pad Pull/Strength
+#define CLK32K_PIN              (*(vu32*)0x0140EC) // Config: Pad Pull
+
+#define WLAN_RESET_TUPLE_STATUS (*(vu32*)0x0140F0)
+
+// MBOX Registers
+// --------------
+
+#define WLAN_MBOX_FIFO                      ((vu32*)0x018000) // 0..3
+#define WLAN_MBOX_FIFO_STATUS               (*(vu32*)0x018010)
+#define WLAN_MBOX_DMA_POLICY                (*(vu32*)0x018014)
+
+#define WLAN_MBOX0_DMA_RX_DESCRIPTOR_BASE   (*(vu32*)0x018018)
+#define WLAN_MBOX0_DMA_RX_CONTROL           (*(vu32*)0x01801C) // MBOX 0
+#define WLAN_MBOX0_DMA_TX_DESCRIPTOR_BASE   (*(vu32*)0x018020)
+#define WLAN_MBOX0_DMA_TX_CONTROL           (*(vu32*)0x018024)
+
+#define WLAN_MBOX1_DMA_RX_DESCRIPTOR_BASE   (*(vu32*)0x018028)
+#define WLAN_MBOX1_DMA_RX_CONTROL           (*(vu32*)0x01802C) // MBOX 1
+#define WLAN_MBOX1_DMA_TX_DESCRIPTOR_BASE   (*(vu32*)0x018030)
+#define WLAN_MBOX1_DMA_TX_CONTROL           (*(vu32*)0x018034)
+
+#define WLAN_MBOX2_DMA_RX_DESCRIPTOR_BASE   (*(vu32*)0x018038)
+#define WLAN_MBOX2_DMA_RX_CONTROL           (*(vu32*)0x01803C) // MBOX 2
+#define WLAN_MBOX2_DMA_TX_DESCRIPTOR_BASE   (*(vu32*)0x018040)
+#define WLAN_MBOX2_DMA_TX_CONTROL           (*(vu32*)0x018044)
+
+#define WLAN_MBOX3_DMA_RX_DESCRIPTOR_BASE   (*(vu32*)0x018048)
+#define WLAN_MBOX3_DMA_RX_CONTROL           (*(vu32*)0x01804C) // MBOX 3
+#define WLAN_MBOX3_DMA_TX_DESCRIPTOR_BASE   (*(vu32*)0x018050)
+#define WLAN_MBOX3_DMA_TX_CONTROL           (*(vu32*)0x018054)
+
+#define WLAN_MBOX_INT_STATUS                (*(vu32*)0x018058) // Interrupt
+#define WLAN_MBOX_INT_ENABLE                (*(vu32*)0x01805C)
+
+#define WLAN_INT_HOST                       (*(vu32*)0x018060)
+//#define PAD0                                ((vu8*)0x018064) // 0..27
+#define WLAN_LOCAL_COUNT                    ((vu32*)0x018080) // 0..7
+#define WLAN_COUNT_INC                      ((vu32*)0x0180A0) // 0..7
+#define WLAN_LOCAL_SCRATCH                  ((vu32*)0x0180C0) // 0..7
+#define WLAN_USE_LOCAL_BUS                  (*(vu32*)0x0180E0)
+#define WLAN_SDIO_CONFIG                    (*(vu32*)0x0180E4)
+#define WLAN_MBOX_DEBUG                     (*(vu32*)0x0180E8)
+#define WLAN_MBOX_FIFO_RESET                (*(vu32*)0x0180EC)
+#define WLAN_MBOX_TXFIFO_POP                (*(vu32*)0x0180F0) // 0..3
+#define WLAN_MBOX_RXFIFO_POP                (*(vu32*)0x018100) // 0..3
+#define WLAN_SDIO_DEBUG                     (*(vu32*)0x018110)
+//#define PAD1                                (*(vu8*)0x018114) // 0..7915
+#define WLAN_HOST_IF_WINDOW[0..2047]        ((vu32*)0x01A000) // 0..2047
+
 #ifdef __cplusplus
 }
 #endif
