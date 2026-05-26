@@ -274,6 +274,51 @@ extern "C" {
 //#define PAD1                                (*(vu8*)0x018114) // 0..7915
 #define WLAN_HOST_IF_WINDOW[0..2047]        ((vu32*)0x01A000) // 0..2047
 
+// Analog Intf Registers
+// ---------------------
+
+#define SYNTH_SYNTH1        (*(vu32*)0x01C000)
+#define SYNTH_SYNTH2        (*(vu32*)0x01C004)
+#define SYNTH_SYNTH3        (*(vu32*)0x01C008)
+#define SYNTH_SYNTH4        (*(vu32*)0x01C00C)
+#define SYNTH_SYNTH5        (*(vu32*)0x01C010)
+#define SYNTH_SYNTH6        (*(vu32*)0x01C014)
+#define SYNTH_SYNTH7        (*(vu32*)0x01C018)
+#define SYNTH_SYNTH8        (*(vu32*)0x01C01C)
+
+#define RF5G_RF5G1          (*(vu32*)0x01C020)
+#define RF5G_RF5G2          (*(vu32*)0x01C024)
+
+#define RF2G_RF2G1          (*(vu32*)0x01C028)
+#define RF2G_RF2G2          (*(vu32*)0x01C02C)
+
+#define TOP_GAIN            (*(vu32*)0x01C030)
+#define TOP_TOP             (*(vu32*)0x01C034)
+
+#define BIAS_BIAS_SEL       (*(vu32*)0x01C038)
+#define BIAS_BIAS1          (*(vu32*)0x01C03C)
+#define BIAS_BIAS2          (*(vu32*)0x01C040)
+#define BIAS_BIAS3          (*(vu32*)0x01C044)
+
+#define TXPC_TXPC           (*(vu32*)0x01C048)
+#define TXPC_MISC           (*(vu32*)0x01C04C)
+
+#define RXTXBB_RXTXBB1      (*(vu32*)0x01C050)
+#define RXTXBB_RXTXBB2      (*(vu32*)0x01C054)
+#define RXTXBB_RXTXBB3      (*(vu32*)0x01C058)
+#define RXTXBB_RXTXBB4      (*(vu32*)0x01C05C)
+
+#define ADDAC_ADDAC1        (*(vu32*)0x01C060)
+//#define ???                 ((vu8*)0x01C064) // 0..0x1B
+
+// More Analog Intf Registers
+// --------------------------
+
+#define SW_OVERRIDE         (*(vu32*)0x01C080)
+#define SIN_VAL             (*(vu32*)0x01C084)
+#define SW_SCLK             (*(vu32*)0x01C088)
+#define SW_CNTL             (*(vu32*)0x01C08C)
+
 #ifdef __cplusplus
 }
 #endif
