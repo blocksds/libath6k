@@ -151,12 +151,12 @@ extern "C" {
 // Serial I2C/SPI Interface
 // ------------------------
 
-#define SI_CONFIG       (*(vu32)0x010000)
-#define SI_CS           (*(vu32)0x010004)
-#define SI_TX_DATA0     (*(vu32)0x010008)
-#define SI_TX_DATA1     (*(vu32)0x01000C)
-#define SI_RX_DATA0     (*(vu32)0x010010)
-#define SI_RX_DATA1     (*(vu32)0x010014)
+#define SI_CONFIG       (*(vu32*)0x010000)
+#define SI_CS           (*(vu32*)0x010004)
+#define SI_TX_DATA0     (*(vu32*)0x010008)
+#define SI_TX_DATA1     (*(vu32*)0x01000C)
+#define SI_RX_DATA0     (*(vu32*)0x010010)
+#define SI_RX_DATA1     (*(vu32*)0x010014)
 
 // GPIO Registers
 // --------------
