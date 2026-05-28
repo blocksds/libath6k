@@ -18,6 +18,7 @@ extern "C" {
 /// @section intro Introduction
 /// Welcome to the libath6k reference documentation.
 
+#include <ath6k/registers.h>
 #include <ath6k/types.h>
 #include <ath6k/placeholder.h>
 
