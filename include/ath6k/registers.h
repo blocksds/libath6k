@@ -272,7 +272,7 @@ extern "C" {
 #define WLAN_MBOX_RXFIFO_POP                (*(vu32*)0x018100) // 0..3
 #define WLAN_SDIO_DEBUG                     (*(vu32*)0x018110)
 //#define PAD1                                (*(vu8*)0x018114) // 0..7915
-#define WLAN_HOST_IF_WINDOW[0..2047]        ((vu32*)0x01A000) // 0..2047
+#define WLAN_HOST_IF_WINDOW                 ((vu32*)0x01A000) // 0..2047
 
 // Analog Intf Registers
 // ---------------------
